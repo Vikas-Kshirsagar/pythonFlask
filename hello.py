@@ -22,5 +22,17 @@ def signUp():
         return json.dumps({'html':'<span>All fields good !!</span>'})
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
+@app.route('/signIn',methods=['POST'])
+def signIn():
+ 
+    # read the posted values from the UI
+    _email = request.form['inputEmail']
+    _password = request.form['inputPassword']
+ 
+    # validate the received values
+    if _email and _password:
+        return json.dumps({'html':'<span>All fields good !!</span>'})
+    else:
+        return json.dumps({'html':'<span>Enter the required fields</span>'})
 if __name__ == '__main__':
     app.run(debug=True) 
