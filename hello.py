@@ -1,9 +1,12 @@
 from flask import Flask, render_template, json, request
 app = Flask(__name__)
-@app.route('/')
+@app.route('/home')
 def main():
     return render_template('index.html')
-@app.route('/showSignUp')
+@app.route('/signIn')
+def showSignIn():
+    return render_template('signin.html')
+@app.route('/signUp')
 def showSignUp():
     return render_template('signup.html')
 @app.route('/signUp',methods=['POST'])
@@ -20,4 +23,4 @@ def signUp():
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
