@@ -1,6 +1,7 @@
 from flask import Flask, render_template, json, request
 app = Flask(__name__)
 @app.route('/home')
+@app.route('/')
 def main():
     return render_template('index.html')
 @app.route('/signIn')
@@ -35,4 +36,4 @@ def signIn():
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
