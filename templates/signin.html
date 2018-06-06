@@ -37,16 +37,7 @@
   <body>
  
     <div class="container">
-      <div class="header">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" ><a href="home">Home</a></li>
-            <li role="presentation" class="active"><a href="signIn">Sign In</a></li>
-            <li role="presentation" ><a href="signUp">Sign Up</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Python Flask App</h3>
-      </div>
+      {% include "header.html" %}
  
       <div class="jumbotron">
         <h1>Bucket List App</h1>
@@ -57,14 +48,14 @@
         <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
          
         <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="button">Sign In</button>
+        <br>
+        <a href="signUp">Create New Account</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="forgotPassword" >Forgot Password?</a>
       </form>
       </div>
  
        
  
-      <footer class="footer">
-        <p>&copy; Company 2015</p>
-      </footer>
+      {% include "footer.html" %}
  
     </div>
   </body>

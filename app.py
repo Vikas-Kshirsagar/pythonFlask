@@ -35,5 +35,12 @@ def signIn():
         return json.dumps({'html':'<span>All fields good !!</span>'})
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
+@app.route('/forgotPassword')
+def showForgotPassword():
+    return render_template('forgot_Password.html')
+
+@app.route('/productid')
+def showproductsDetails():
+    return render_template('products_Details.html')
 if __name__ == '__main__':
     app.run(debug=True)
