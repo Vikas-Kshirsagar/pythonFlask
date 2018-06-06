@@ -4,15 +4,17 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('index.html')
+
 @app.route('/signIn')
 def showSignIn():
     return render_template('signin.html')
+
 @app.route('/signUp')
 def showSignUp():
     return render_template('signup.html')
+
 @app.route('/signUp',methods=['POST'])
 def signUp():
- 
     # read the posted values from the UI
     _name = request.form['inputName']
     _email = request.form['inputEmail']
@@ -23,9 +25,9 @@ def signUp():
         return json.dumps({'html':'<span>All fields good !!</span>'})
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
+
 @app.route('/signIn',methods=['POST'])
 def signIn():
- 
     # read the posted values from the UI
     _email = request.form['inputEmail']
     _password = request.form['inputPassword']
@@ -35,6 +37,7 @@ def signIn():
         return json.dumps({'html':'<span>All fields good !!</span>'})
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})
+
 @app.route('/forgotPassword')
 def showForgotPassword():
     return render_template('forgot_Password.html')
@@ -42,5 +45,6 @@ def showForgotPassword():
 @app.route('/productid')
 def showproductsDetails():
     return render_template('products_Details.html')
+    
 if __name__ == '__main__':
     app.run(debug=True)
